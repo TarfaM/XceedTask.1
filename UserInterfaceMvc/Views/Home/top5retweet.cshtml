@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Top 5 retweet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>top 5 retweet</h1>
+
+
+@{int counter = 1;}
+
+@foreach (var line in Model)
+{
+
+    <div class="table">
+        <table class="table-responsive .col-md-8  ">
+
+
+            <tr>
+                <td><h1>Number</h1></td>
+                <td>
+                    <h1>
+
+                        @counter
+                        @{counter++;}
+                    </h1>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Profile image:</td>
+                <td>
+                    <img src="@Url.Content(@line.userImageProfile)">
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Account name:</td>
+                <td>@line.userName</td>
+            </tr>
+            <tr>
+                <td>Tweet:</td>
+                <td>@line.Text</td>
+            </tr>
+            <tr>
+                <td>Date time:</td>
+                <td>@line.dateText</td>
+            </tr>
+
+            <tr>
+                <td>Number of retweet:</td>
+                <td>@line.retweetCount</td>
+            </tr>
+            <tr>
+                <td>the most  user followed:</td>
+                <td>@line.userFollowers</td>
+            </tr>
+
+        </table>
+    </div>
+}
+
